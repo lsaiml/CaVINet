@@ -251,11 +251,10 @@ if __name__ == "__main__":
     accu = 0
     accu_list = []
 
-    training_np = 'data_instances1/training_1.txt'
-    testing_np = '../data_instances2/testing_1.txt'
+    training_np = 'data_instances/training_1.txt'
+    testing_np = '../data_instances/testing_1.txt'
 
     model = model()
     print model.output
+    # Testing
     test(model)
-
-    # model.predict([[x_test[:, :, :, 0:3], x_test[:, :, :, 3:6]])

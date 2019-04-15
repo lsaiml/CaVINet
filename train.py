@@ -18,8 +18,8 @@ import tensorflow as tf
 import gc
 
 #custom parameters
-nb_class = 195
-base_dir = '/home/btp17-18-2/Data/'
+nb_class = 143
+base_dir = '/home/btp17-18-2/Data/' # Change it accordingly!
 
 
 def get_data_from_file(file):
@@ -37,8 +37,7 @@ def get_data_from_file(file):
 
 def load_data(training_np):
     training = get_data_from_file(training_np)
-    identities = np.load('../data_instances2/identities_195.npy')
-    # random.shuffle(training)
+    identities = np.load('../data_instances/identities.npy')
     size = training.shape[0]
     train_data = np.zeros((size, 224, 224, 6), dtype=np.float32)
     train_labels = np.zeros((size, 3))
@@ -245,9 +244,9 @@ if __name__ == "__main__":
     accu = 0
     accu_list = []
 
-    training_np = '../data_instances2/train/training_5.txt'
-    validation_np = '../data_instances2/validation_subset.txt'
-    testing_np = '../data_instances2/testing.txt'
+    training_np = '../data_instances/train/training_5.txt'
+    validation_np = '../data_instances/validation_subset.txt'
+    testing_np = '../data_instances/testing.txt'
 
     model = model()
     print model.output
